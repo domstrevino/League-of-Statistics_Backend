@@ -1,4 +1,4 @@
-using LeagueClient.Models;
+using LeagueClient.Models.Context;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 

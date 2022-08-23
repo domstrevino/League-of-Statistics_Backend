@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LeagueClient.Models
+namespace LeagueClient.Models.Context
 {
     public partial class Role
     {

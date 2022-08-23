@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using LeagueClient.Models;
+using LeagueClient.Models.Context;
 
 namespace LeagueClient.Controllers.API.V1
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class RolesController : ControllerBase
     {
@@ -20,7 +20,7 @@ namespace LeagueClient.Controllers.API.V1
             _context = context;
         }
 
-        // GET: api/Roles
+        // GET: api/v1/Roles
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Role>>> GetRoles()
         {
@@ -31,7 +31,7 @@ namespace LeagueClient.Controllers.API.V1
             return await _context.Roles.ToListAsync();
         }
 
-        // GET: api/Roles/5
+        // GET: api/v1/Roles/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Role>> GetRole(int id)
         {
@@ -49,8 +49,7 @@ namespace LeagueClient.Controllers.API.V1
             return role;
         }
 
-        // PUT: api/Roles/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // PUT: api/v1/Roles/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutRole(int id, Role role)
         {
@@ -80,8 +79,7 @@ namespace LeagueClient.Controllers.API.V1
             return NoContent();
         }
 
-        // POST: api/Roles
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // POST: api/v1/Roles
         [HttpPost]
         public async Task<ActionResult<Role>> PostRole(Role role)
         {
@@ -95,7 +93,7 @@ namespace LeagueClient.Controllers.API.V1
             return CreatedAtAction("GetRole", new { id = role.RoleId }, role);
         }
 
-        // DELETE: api/Roles/5
+        // DELETE: api/v1/Roles/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteRole(int id)
         {

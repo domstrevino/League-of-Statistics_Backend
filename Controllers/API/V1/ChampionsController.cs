@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using LeagueClient.Models;
+using LeagueClient.Models.Context;
 
 namespace LeagueClient.Controllers.API.V1
 {
@@ -14,12 +14,10 @@ namespace LeagueClient.Controllers.API.V1
     public class ChampionsController : ControllerBase
     {
         private readonly LeagueClientContext _context;
-        private readonly IServiceCollection _service;
 
-        public ChampionsController(LeagueClientContext context, IServiceCollection service)
+        public ChampionsController(LeagueClientContext context)
         {
             _context = context;
-            _service = service;
         }
 
         // GET: api/v1/Champions

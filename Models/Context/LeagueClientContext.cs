@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace LeagueClient.Models
+namespace LeagueClient.Models.Context
 {
     public partial class LeagueClientContext : DbContext
     {
