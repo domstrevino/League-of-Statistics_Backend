@@ -6,3 +6,13 @@
 *.v2
 
 .vs/LeagueClient/v17/
+
+*.vsidx
+
+*.dll
+
+bin/Debug/net6.0/
+
+*.pdb
+
+obj/

@@ -9,7 +9,7 @@ using LeagueClient.Models.Context;
 
 namespace LeagueClient.Controllers.API.V1
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class AbilitiesController : ControllerBase
     {
@@ -20,7 +20,7 @@ namespace LeagueClient.Controllers.API.V1
             _context = context;
         }
 
-        // GET: api/Abilities
+        // GET: api/v1/Abilities
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Ability>>> GetAbilities()
         {
@@ -31,7 +31,7 @@ namespace LeagueClient.Controllers.API.V1
             return await _context.Abilities.ToListAsync();
         }
 
-        // GET: api/Abilities/5
+        // GET: api/v1/Abilities/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Ability>> GetAbility(int id)
         {
@@ -49,8 +49,7 @@ namespace LeagueClient.Controllers.API.V1
             return ability;
         }
 
-        // PUT: api/Abilities/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // PUT: api/v1/Abilities/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAbility(int id, Ability ability)
         {
@@ -80,8 +79,7 @@ namespace LeagueClient.Controllers.API.V1
             return NoContent();
         }
 
-        // POST: api/Abilities
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // POST: api/v1/Abilities
         [HttpPost]
         public async Task<ActionResult<Ability>> PostAbility(Ability ability)
         {
@@ -95,7 +93,7 @@ namespace LeagueClient.Controllers.API.V1
             return CreatedAtAction("GetAbility", new { id = ability.AbilityId }, ability);
         }
 
-        // DELETE: api/Abilities/5
+        // DELETE: api/v1/Abilities/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAbility(int id)
         {
