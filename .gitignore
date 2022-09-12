@@ -16,3 +16,5 @@ bin/Debug/net6.0/
 *.pdb
 
 obj/
+
+*.config
