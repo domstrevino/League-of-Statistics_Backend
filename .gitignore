@@ -18,3 +18,7 @@ bin/Debug/net6.0/
 obj/
 
 *.config
+
+*.csproj
+
+*.user

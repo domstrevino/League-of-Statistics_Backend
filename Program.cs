@@ -1,9 +1,19 @@
 using LeagueClient.Models.Context;
 using Microsoft.EntityFrameworkCore;
-using System.Configuration;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("default", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000")
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
 
 // Add services to the container.
 builder.Services.AddDbContext<LeagueClientContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("connectionString")));
@@ -24,8 +34,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
+
+app.UseCors("default");
 
 app.UseAuthorization();
 
