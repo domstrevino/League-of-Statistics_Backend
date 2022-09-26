@@ -19,6 +19,4 @@ obj/
 
 *.config
 
-*.csproj
-
 *.user
